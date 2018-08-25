@@ -26,13 +26,14 @@
         CodeColor(document.getElementById("code"))// gives the code his color
     });
     function load(some){
-        switch(some.split(".")[some.split(".").length-1]){
+        switch(some.split(".")[some.split(".").length-1]){// for example "Index.html".split(".")=["Index","html"]; the last item of the list always is the file type
             case "css":
             case "less":
             case "scss":
                 var lang="css";
                 break;
             case "html":
+            case "htm":
             case "xml":
             case "xhtml":
                 var lang="html";
