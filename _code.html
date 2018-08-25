@@ -17,9 +17,10 @@
 <p>Load another file: </p><input type="text" id="file" oninput="load(this.value)">
 <pre id="code"></pre><!-- the place where the code comes -->
 <script>
+    var Index="Index.html";//set this to the local Index file
     var invert=false,txt;// makes a variable named txt
     String.prototype.re=function(a,b){return this.split(a).join(b)};// makes a re function for all strings that replaces a by b
-    $.get('Index.html', function(data) {// load Index.html and run it in a function with the name data
+    $.get(Index, function(data) {// load Index.html and run it in a function with the name data
         txt=data.re("<","&lt;").re(">","&gt;").re("\n","<br>");// sets var txt to data, and replaces: < by &lt;, > by &gt; and \n by <br>
         document.getElementById("code").innerHTML=txt;// sets the code into the field
         CodeColor(document.getElementById("code"))// gives the code his color
